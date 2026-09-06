@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta name="description" content="Search 40 programming languages by name, category, extension, and syntax. Explore and copy Hello, World! examples.">
+  <title>Hello World — Programming Language Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header"><a class="brand" href="./"><span class="brand-icon">h<span>_</span></span> hello<span class="brand-light">world</span><span class="brand-dot">.</span></a><nav><a href="#languages">Browse languages <span class="nav-count">40</span></a><a href="#editor">Code editor <span class="arrow">↗</span></a></nav><span class="header-note"><i></i> Find a language. Start building.</span></header>
+  <main>
+    <section class="hero search-hero">
+      <div class="eyebrow"><span></span> YOUR PROGRAMMING LANGUAGE SEARCH ENGINE</div>
+      <h1>Find your next <span>language.</span></h1>
+      <p>Explore 40 programming languages. Find the syntax. Start something new.</p>
+      <form id="search-form" class="engine-search" role="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search languages, extensions, or code…" aria-label="Search languages" autocomplete="off"><kbd>/</kbd><button type="submit">Search <span>→</span></button></form>
+      <div class="suggestions"><span>Try searching</span><button data-query="Python">Python</button><button data-query="web">web</button><button data-query=".rs">.rs</button><button data-query="functional">functional</button><button data-query="console.log">console.log</button></div>
+      <div class="search-scope"><i></i> 40 languages indexed <span>·</span> Instant results <span>·</span> Copy-ready examples</div>
+    </section>
+    <section id="editor" class="editor-section">
+      <div class="section-heading"><div><div class="eyebrow">YOUR WORKSPACE</div><h2>Make it your own<span>.</span></h2></div><p>Edit any language. Keep your next idea here.</p></div>
+      <div class="editor-shell">
+        <div class="editor-toolbar"><label class="editor-language-label">Language <select id="editor-language" aria-label="Editor language"></select></label><div class="editor-actions"><button id="editor-run" class="run-button" title="Run JavaScript (Ctrl/⌘ + Enter)">▶ Run</button><button id="editor-stop" disabled>Stop</button><button id="editor-example">Restore example</button><button id="editor-copy">Copy code</button><button id="editor-download" class="download-button">Download ↓</button></div></div>
+        <div class="cloud-toolbar"><span id="cloud-status" role="status">Cloud storage is not configured · drafts stay in this browser</span><div><button id="cloud-save" disabled>Save to cloud</button><button id="cloud-load" disabled>Load cloud draft</button></div></div><div class="editor-filebar"><span><i></i> <span id="editor-filename">hello.js</span></span><span id="editor-saved" role="status">Saved on this browser</span></div>
+        <div class="editor-body"><pre id="editor-lines" aria-hidden="true">1</pre><textarea id="code-editor" aria-label="Code editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off"></textarea></div>
+        <div class="runner-panel"><div class="runner-heading"><span>OUTPUT <span id="run-status" role="status">Ready</span></span><button id="output-clear">Clear</button></div><pre id="run-output" aria-label="Program output" tabindex="0">Run JavaScript to see output here.</pre><p id="run-help">JavaScript runs in an isolated worker without page or network access. Use console.log() for output and await asynchronous work. Maximum runtime: 5 seconds.</p></div>
+        <div class="editor-status"><span id="editor-position">Ln 1, Col 1</span><span id="editor-size"></span><span>UTF-8 <b>·</b> Ctrl/⌘ + ]: indent</span></div>
+      </div>
+      <p class="editor-note">Drafts are saved separately for each language in this browser. <span>Run JavaScript here, or download other languages to run locally.</span></p>
+    </section>
+    <section id="languages" class="collection">
+      <div class="section-heading"><div><div class="eyebrow">EXPLORE THE INDEX</div><h2>Programming languages<span>.</span></h2></div><p>Search, discover, and try your first line.</p></div>
+      <div class="toolbar"><div class="filters" role="group" aria-label="Filter languages"><button class="active" data-filter="All">All languages <span>40</span></button><button data-filter="Popular">Popular</button><button data-filter="Web">Web</button><button data-filter="Systems">Systems</button><button data-filter="Scripting">Scripting</button><button data-filter="Functional">Functional</button></div></div>
+      <div class="results-line"><span id="results-count" aria-live="polite">Showing 40 languages</span><label>Sort by <select id="sort" aria-label="Sort languages"><option value="featured">Relevance</option><option value="az">Name: A–Z</option></select></label></div>
+      <div class="grid" id="grid"></div><div id="empty" hidden><span>⌕</span><h3>No matching languages.</h3><p>Try a language name, extension, or code snippet. You can also clear the category filter.</p><button id="reset">Clear filters</button></div>
+      <div class="collection-end"><span>✳</span> Different syntax. Same first step.</div>
+    </section>
+    <section id="about" class="about"><span class="about-symbol">“</span><div><div class="eyebrow">BUILT FOR DISCOVERY</div><h2>A starting point for every search.</h2><p>Search our curated index by language name, category, file extension, or syntax. Every result includes a Hello, World! example you can copy and explore. This search covers the 40 languages in our collection, rather than the open web.</p><small>Examples use the standard output conventions of each language. Some need a compiler, runtime, or surrounding project to run.</small></div><span class="about-end">hello, future<span>_</span></span></section>
+  </main>
+  <footer><a class="brand" href="./">hello<span class="brand-light">world</span><span class="brand-dot">.</span></a><span>Made for curious minds & fresh starts.</span><a href="#">Back to top ↑</a></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="firebase-config.js"></script>
+  <script src="run-sandbox.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
